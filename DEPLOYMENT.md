@@ -37,14 +37,14 @@ Add the following environment variables in the Vercel dashboard:
 ```env
 # Chain Configuration
 NEXT_PUBLIC_CHAIN_ID=11155111
-NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
+NEXT_PUBLIC_RPC_URL=your_rpc_endpoint_here
 
 # Wallet Connect Configuration
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_project_id_here
 
 # Infura Configuration (Optional)
-NEXT_PUBLIC_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
-NEXT_PUBLIC_RPC_URL=https://1rpc.io/sepolia
+NEXT_PUBLIC_INFURA_API_KEY=your_infura_key_here
+NEXT_PUBLIC_RPC_URL=your_alternative_rpc_here
 ```
 
 ### 4. Deploy Configuration
@@ -53,9 +53,9 @@ NEXT_PUBLIC_RPC_URL=https://1rpc.io/sepolia
 1. In the project settings, go to "Environment Variables"
 2. Add each variable one by one:
    - `NEXT_PUBLIC_CHAIN_ID` = `11155111`
-   - `NEXT_PUBLIC_RPC_URL` = `https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990`
-   - `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID` = `2ec9743d0d0cd7fb94dee1a7e6d33475`
-   - `NEXT_PUBLIC_INFURA_API_KEY` = `b18fb7e6ca7045ac83c41157ab93f990`
+   - `NEXT_PUBLIC_RPC_URL` = `your_rpc_endpoint_here`
+   - `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID` = `your_project_id_here`
+   - `NEXT_PUBLIC_INFURA_API_KEY` = `your_infura_key_here`
 
 #### Step 4.2: Configure Build Settings
 1. Go to "Settings" → "General"
@@ -106,9 +106,9 @@ vercel --prod
 | Variable | Value | Description |
 |----------|-------|-------------|
 | `NEXT_PUBLIC_CHAIN_ID` | `11155111` | Sepolia testnet chain ID |
-| `NEXT_PUBLIC_RPC_URL` | `https://sepolia.infura.io/v3/...` | Ethereum RPC endpoint |
-| `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID` | `2ec9743d0d0cd7fb94dee1a7e6d33475` | WalletConnect project ID |
-| `NEXT_PUBLIC_INFURA_API_KEY` | `b18fb7e6ca7045ac83c41157ab93f990` | Infura API key |
+| `NEXT_PUBLIC_RPC_URL` | `your_rpc_endpoint_here` | Ethereum RPC endpoint |
+| `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID` | `your_project_id_here` | WalletConnect project ID |
+| `NEXT_PUBLIC_INFURA_API_KEY` | `your_infura_key_here` | Infura API key |
 
 ## Troubleshooting
 

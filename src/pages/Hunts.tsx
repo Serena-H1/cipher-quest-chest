@@ -1,7 +1,9 @@
 import { TreasureHuntCard } from "@/components/TreasureHuntCard";
+import { QuestContract } from "@/components/QuestContract";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, Filter, Plus } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Search, Filter, Plus, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const treasureHunts = [
@@ -100,33 +102,53 @@ const Hunts = () => {
           </p>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <Button variant="outline" size="sm" className="border-mystical text-mystical">
-            <Filter className="w-4 h-4 mr-2" />
-            All Hunts
-          </Button>
-          <Button variant="ghost" size="sm">Active</Button>
-          <Button variant="ghost" size="sm">Encrypted</Button>
-          <Button variant="ghost" size="sm">Completed</Button>
-        </div>
+        {/* Tabs for different views */}
+        <Tabs defaultValue="hunts" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsTrigger value="hunts" className="flex items-center gap-2">
+              <Search className="w-4 h-4" />
+              Browse Hunts
+            </TabsTrigger>
+            <TabsTrigger value="contract" className="flex items-center gap-2">
+              <Shield className="w-4 h-4" />
+              Quest Contract
+            </TabsTrigger>
+          </TabsList>
 
-        {/* Treasure Hunt Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {treasureHunts.map((hunt, index) => (
-            <div key={index} className="animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
-              <TreasureHuntCard {...hunt} />
+          <TabsContent value="hunts" className="space-y-8">
+            {/* Filters */}
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button variant="outline" size="sm" className="border-mystical text-mystical">
+                <Filter className="w-4 h-4 mr-2" />
+                All Hunts
+              </Button>
+              <Button variant="ghost" size="sm">Active</Button>
+              <Button variant="ghost" size="sm">Encrypted</Button>
+              <Button variant="ghost" size="sm">Completed</Button>
             </div>
-          ))}
-        </div>
 
-        {/* Load More */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-treasure text-treasure hover:bg-treasure/10">
-            <Search className="w-5 h-5 mr-2" />
-            Load More Hunts
-          </Button>
-        </div>
+            {/* Treasure Hunt Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              {treasureHunts.map((hunt, index) => (
+                <div key={index} className="animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                  <TreasureHuntCard {...hunt} />
+                </div>
+              ))}
+            </div>
+
+            {/* Load More */}
+            <div className="text-center">
+              <Button variant="outline" size="lg" className="border-treasure text-treasure hover:bg-treasure/10">
+                <Search className="w-5 h-5 mr-2" />
+                Load More Hunts
+              </Button>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="contract">
+            <QuestContract />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
