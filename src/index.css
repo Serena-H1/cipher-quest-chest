@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fantasy Treasure Hunt Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Core fantasy theme colors */
+    --background: 220 15% 8%;
+    --foreground: 45 100% 85%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 45 100% 85%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 45 100% 85%;
+
+    /* Mystical primary (deep blue-purple) */
+    --primary: 240 35% 25%;
+    --primary-foreground: 45 100% 85%;
+
+    /* Golden treasure theme */
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 220 25% 12%;
+
+    /* Muted mystical tones */
+    --muted: 220 20% 15%;
+    --muted-foreground: 45 30% 65%;
+
+    /* Enchanted accent (mystical purple) */
+    --accent: 280 40% 35%;
+    --accent-foreground: 45 100% 85%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 100% 85%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 15%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom treasure hunt variables */
+    --treasure-gold: 45 100% 60%;
+    --treasure-gold-glow: 45 100% 75%;
+    --mystical-blue: 220 60% 45%;
+    --mystical-purple: 280 50% 40%;
+    --enchanted-green: 150 40% 45%;
+    --shadow-deep: 220 25% 5%;
+
+    /* Gradients */
+    --gradient-treasure: linear-gradient(135deg, hsl(var(--treasure-gold)), hsl(var(--treasure-gold-glow)));
+    --gradient-mystical: linear-gradient(135deg, hsl(var(--mystical-blue)), hsl(var(--mystical-purple)));
+    --gradient-map: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Glowing effects */
+    --glow-treasure: 0 0 20px hsl(var(--treasure-gold) / 0.5);
+    --glow-mystical: 0 0 15px hsl(var(--mystical-blue) / 0.4);
+    --glow-enchanted: 0 0 12px hsl(var(--enchanted-green) / 0.3);
+
+    /* Animations */
+    --transition-magic: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-glow: glow 2s ease-in-out infinite alternate;
+    --animation-float: float 3s ease-in-out infinite;
+    --animation-spin-slow: spin 8s linear infinite;
+  }
+
+  .dark {
+    /* Enhanced dark theme for fantasy treasure hunt */
+    --background: 220 20% 6%;
+    --foreground: 45 100% 90%;
+    --card: 220 30% 10%;
+    --card-foreground: 45 100% 90%;
+    --treasure-gold: 45 100% 65%;
+    --treasure-gold-glow: 45 100% 80%;
+    --mystical-blue: 220 70% 50%;
+    --mystical-purple: 280 60% 45%;
+    --glow-treasure: 0 0 25px hsl(var(--treasure-gold) / 0.6);
+    --glow-mystical: 0 0 20px hsl(var(--mystical-blue) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Fantasy treasure hunt animations */
+  @keyframes glow {
+    from { box-shadow: var(--glow-treasure); }
+    to { box-shadow: var(--glow-treasure), var(--glow-mystical); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* Custom utility classes */
+  .treasure-glow {
+    box-shadow: var(--glow-treasure);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .mystical-glow {
+    box-shadow: var(--glow-mystical);
+  }
+
+  .enchanted-glow {
+    box-shadow: var(--glow-enchanted);
+  }
+
+  .floating {
+    animation: var(--animation-float);
+  }
+
+  .gradient-treasure {
+    background: var(--gradient-treasure);
+  }
+
+  .gradient-mystical {
+    background: var(--gradient-mystical);
+  }
+
+  .text-treasure {
+    color: hsl(var(--treasure-gold));
+  }
+
+  .text-mystical {
+    color: hsl(var(--mystical-blue));
+  }
+
+  .bg-map {
+    background: var(--gradient-map);
+  }
+}
