@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TreasureChest, Lock, Shield, Zap } from "lucide-react";
+import { Lock, Shield, Zap, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 // Mock contract address - replace with actual deployed contract
@@ -236,7 +236,7 @@ export const QuestContract = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <TreasureChest className="w-5 h-5" />
+            <Package className="w-5 h-5" />
             Create Encrypted Quest
           </CardTitle>
           <CardDescription>
